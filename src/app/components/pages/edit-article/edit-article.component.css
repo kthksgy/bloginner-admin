@@ -1,0 +1,13 @@
+.formField {
+    width: 100%;
+}
+
+.formArticleOverview {
+    resize: none;
+    height: 4em;
+}
+
+.formArticleContent {
+    resize: none;
+    height: 25em;
+}

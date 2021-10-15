@@ -1,0 +1,36 @@
+<mat-drawer-container class="sidenav-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side" [opened]="menuService.isOpened">
+    <!-- <p>Auto-resizing sidenav</p> -->
+    <mat-list>
+      <mat-icon>account_circle</mat-icon>
+      <h2>{{username}}</h2>
+      <mat-divider></mat-divider>
+      <div [hidden]="!isAdministrator">
+        <mat-list-item>
+          <a routerLink="/users">ユーザー</a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+      <div [hidden]="!isContributor">
+        <mat-list-item>
+          <a routerLink="/articles">記事</a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+
+      <div [hidden]="!isContributor">
+        <mat-list-item>
+          <a routerLink="/comments">コメント</a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+      <div [hidden]="!isContributor">
+        <mat-list-item>
+          <a routerLink="/change-password">パスワード変更</a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-list>
+  </mat-drawer>
+  <ng-content></ng-content>
+</mat-drawer-container>

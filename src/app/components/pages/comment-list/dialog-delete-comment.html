@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>削除</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>本当に削除しますか？</h3>
+  <p>
+    <mat-icon>label</mat-icon>
+    {{data.handlename}}
+  </p>
+  <p>
+    {{data.content}}
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close cdkFocusInitial>キャンセル</button>
+  <button mat-button [mat-dialog-close]="true" color="warn">削除</button>
+</mat-dialog-actions>

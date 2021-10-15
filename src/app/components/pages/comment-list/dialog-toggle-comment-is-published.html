@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>更新</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>本当に{{!data.isPublished ? '公開' : '公開停止'}}しますか？</h3>
+  <p>
+    ユーザー名: {{data.handlename}}
+  </p>
+  <p>
+    {{data.content}}
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close cdkFocusInitial>キャンセル</button>
+  <button mat-button [mat-dialog-close]="true" color="warn">更新</button>
+</mat-dialog-actions>

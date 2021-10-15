@@ -1,0 +1,49 @@
+<app-menu>
+  <div class="container">
+
+    <table mat-table [dataSource]="comments" class="mat-elevation-z0">
+      <ng-container matColumnDef="articleTitle">
+        <th mat-header-cell *matHeaderCellDef>記事タイトル</th>
+        <td mat-cell *matCellDef="let element">{{element.articleTitle != null ?
+          element.articleTitle : "(タイトル無し)"}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="handlename">
+        <th mat-header-cell *matHeaderCellDef>ハンドルネーム</th>
+        <td mat-cell *matCellDef="let element"> {{element.handlename}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="content">
+        <th mat-header-cell *matHeaderCellDef>コメント</th>
+        <td mat-cell *matCellDef="let element"> {{element.content}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef>日時</th>
+        <td mat-cell *matCellDef="let element"> {{element.createdAt}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="buttons">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button *ngIf="!element.isPublished" mat-raised-button color="primary" class="button-toggle-is-published"
+            (click)="toggleIsPublished(element)">公開にする</button>
+          <button *ngIf="element.isPublished" mat-raised-button color="warn" class="button-toggle-is-published"
+            (click)="toggleIsPublished(element)">非公開にする</button>
+          <button mat-stroked-button color="warn" class="button-delete" (click)="delete(element)">削除</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+      (page)="pageEvent($event)">
+    </mat-paginator>
+  </div>
+</app-menu>

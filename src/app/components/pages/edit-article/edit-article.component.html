@@ -1,0 +1,37 @@
+<app-menu>
+  <form [formGroup]="articleForm">
+    <div>
+      <mat-form-field appearance="fill" class="formField">
+        <mat-label>タイトル</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="formField">
+        <mat-label>概要</mat-label>
+        <textarea matInput class="formArticleOverview" formControlName="overview"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill" class="formField">
+        <mat-label>サムネイルURL</mat-label>
+        <input matInput formControlName="thumbnail">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill" class="formField">
+        <mat-label>本文</mat-label>
+        <textarea matInput class="formArticleContent" formControlName="content"></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <button type="button" mat-raised-button routerLink='/articles'>キャンセル</button>
+      <button type="button" mat-raised-button color="primary" (click)="onSubmit();">完了</button>
+    </div>
+
+  </form>
+
+
+</app-menu>

@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>ログアウト</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>本当にログアウトしますか？</h3>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>キャンセル</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>ログアウト</button>
+</mat-dialog-actions>
